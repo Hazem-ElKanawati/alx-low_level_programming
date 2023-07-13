@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
- main - prints the phrase with proper grammar,
+ *main - prints the phrase with proper grammar,
  */
 int main(void)
 {
