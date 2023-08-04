@@ -5,18 +5,20 @@
  * main- calculate change
  * @argc: arg count
  * @argv: arg vector
- * Return: 0(Sucess) 1(Error)
+ * Return: 0(sucess) 1(error)
  */
 
 int main(int argc, char *argv[])
 {
+	int cents, totalCoins;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	int cents = atoi(argv[1]);
+	cents = atoi(argv[1]);
 
 	if (cents < 0)
 	{
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	int totalCoins = 0;
+	totalCoins = 0;
 
 	totalCoins += cents / 25;
 	cents %= 25;
