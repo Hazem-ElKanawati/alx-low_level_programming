@@ -3,7 +3,7 @@
 
 /**
  * add_node - adds a new node to the start of a list
- * @h: pointer to the list
+ * @head: pointer to the list
  * @str: string to be duplicated
  * Return: pointer to the added node (Success) NULL (Error)
  */
