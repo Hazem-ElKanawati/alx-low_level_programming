@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 
 /**
  * add_dnodeint_end - adds element to the end of the list
