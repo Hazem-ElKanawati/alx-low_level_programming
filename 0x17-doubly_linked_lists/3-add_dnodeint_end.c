@@ -6,22 +6,32 @@
  * @n: element
  * Return: ptr to the new elemnt (Success) NULL (Failed)
  */
-
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *ptr, *tail = *head;
+	dlistint_t *h;
+	dlistint_t *new;
 
-	if (tail == NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 		return (NULL);
-	while (tail->next != NULL)
-		tail = tail->next;
-	tail = tail->next;
-	ptr = malloc(sizeof(dlistint_t));
-	if (ptr == NULL)
-		return (NULL);
-	ptr->prev = tail;
-	ptr->n = n;
-	ptr->next = NULL;
-	tail->next = ptr;
-	return (ptr);
+
+	new->n = n;
+	new->next = NULL;
+
+	h = *head;
+
+	if (h != NULL)
+	{
+		while (h->next != NULL)
+			h = h->next;
+		h->next = new;
+	}
+	else
+	{
+		*head = new;
+	}
+
+	new->prev = h;
+
+	return (new);
 }
