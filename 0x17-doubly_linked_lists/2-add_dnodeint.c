@@ -6,20 +6,30 @@
  * @n: element
  * Return: ptr to the new node (Success) NULL (Failed)
  */
-
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *ptr = malloc(sizeof(dlistint_t));
+	dlistint_t *ptr = malloc(sizeof(dlistint_t);
 
-	while ((*head)->prev != NULL)
-		(*head) = (*head)->prev;
 	if (ptr == NULL)
+	{
 		return (NULL);
-	if (*head == NULL)
-		return (NULL);
-	(*head)->prev = ptr;
-	ptr->next = (*head);
+	}
+
 	ptr->n = n;
 	ptr->prev = NULL;
+
+	if (*head == NULL)
+	{
+		ptr->next = NULL;
+	}
+	else
+	{
+		ptr->next = *head;
+		(*head)->prev = ptr;
+	}
+
+	*head = ptr;
+
 	return (ptr);
 }
+
